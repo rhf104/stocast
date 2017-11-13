@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/zwNxr3T.png" style="width: 100px"/>
+<img src="https://i.imgur.com/zwNxr3T.png" style="width: 100px; height: 100px;"/>
 
 # Stocast
 
