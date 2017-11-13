@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-searchbar no-border-bottom placeholder="Search Authors" (ionInput)="searchAuthors($event)"></ion-searchbar>
+  </ion-navbar>
+
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card ion-item (click)="openAuthor(author)" *ngFor="let author of currentAuthors">
+      <h2>{{author.name}}</h2>
+      <p>{{author.years}}</p>
+      <ion-note item-end>
+        <p *ngFor="let title of author.titles">{{title}}</p>
+      </ion-note>
+    </ion-card>
+  </ion-list>
+</ion-content>
