@@ -1,6 +1,6 @@
-<img src="https://i.imgur.com/zwNxr3T.png" style="width: 100px; height: 100px;"/>
+<img src="https://i.imgur.com/zwNxr3T.png" width="200" height="200"/>
 
-# Stocast
+# Stocast Client
 
 Stocast displays a feed of stochastic content generated from [Project Gutenberg][gutenberg] texts.
 
@@ -19,7 +19,7 @@ Make sure to install [Node.js and npm][nodejs] before continuing.
 1. Clone the repo: `git clone https://github.com/rhf104/stocast`
 2. Change directory: `cd stocast`
 3. Install dependencies: `npm install`
-4. Run `ionic serve` and navigate to the local dev server at `http://localhost:8080/`
+4. Run `ionic serve` and navigate to the local dev server at `http://localhost:8100/`
 
 [gutenberg]: https://www.gutenberg.org
 [demo]: https://stocast.appspot.com
