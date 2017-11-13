@@ -1,3 +1,5 @@
+<img src="https://i.imgur.com/zwNxr3T.png" style="width: 100px"/>
+
 # Stocast
 
 Stocast displays a feed of stochastic content generated from [Project Gutenberg][gutenberg] texts.
