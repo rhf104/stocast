@@ -7,7 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { ApiProvider } from '../providers/api/api';
-import { AuthorsProvider, UserProvider } from "../providers/providers";
+import { AuthorsProvider, UserProvider, StatusesProvider } from "../providers/providers";
 
 @NgModule({
   declarations: [
@@ -26,6 +26,7 @@ import { AuthorsProvider, UserProvider } from "../providers/providers";
     ApiProvider,
     UserProvider,
     AuthorsProvider,
+    StatusesProvider,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
