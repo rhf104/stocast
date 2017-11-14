@@ -7,12 +7,11 @@ export class Authors {
   authors: Author[] = [];
 
   defaultAuthor: any = {
-    "name": "Franz Kafka",
-    "years": "1883–1924",
+    "name": "Oscar Wilde",
+    "years": "1854–1900",
     "titles": [
-      "The Metamorphosis",
-      "The Trial",
-      "The Castle"
+      "The Importance of Being Earnest",
+      "The Picture of Dorian Gray"
     ],
   };
 
@@ -27,6 +26,14 @@ export class Authors {
           "The Castle"
         ],
       },
+      {
+        "name": "Oscar Wilde",
+        "years": "1854–1900",
+        "titles": [
+          "The Importance of Being Earnest",
+          "The Picture of Dorian Gray"
+        ],
+      }
     ];
 
     for (let author of authors) {

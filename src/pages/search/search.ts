@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, Searchbar } from 'ionic-angular';
+import { ActionSheetController, IonicPage, NavController, NavParams, Searchbar } from 'ionic-angular';
 
 import { Authors } from '../../providers/providers';
 import { Author } from '../../models/author';
@@ -17,7 +17,8 @@ export class SearchPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public authors: Authors) {
+    public authors: Authors,
+    public actionsheetCtrl: ActionSheetController) {
   }
 
   /**
@@ -32,6 +33,25 @@ export class SearchPage {
     this.currentAuthors = this.authors.query({
       name: val
     });
+  }
+
+  // TODO: implement following
+  /**
+   * Check if user is following an author
+   */
+  isUserFollowing(author: Author) {
+    return true;
+  }
+
+  /**
+   * Open unfollow action sheet if already following
+   */
+  onFollowButtonPress(author: Author) {
+    if (this.isUserFollowing(author)) {
+      this.openUnfollowSheet(author);
+    } else {
+      this.user.followAuthor(author);
+    }
   }
 
   /**
@@ -55,5 +75,28 @@ export class SearchPage {
    */
   ionViewWillLeave() {
     this.searchbar.getNativeElement().hidden = true;
+  }
+
+  private openUnfollowSheet(author: Author) {
+    let actionSheet = this.actionsheetCtrl.create({
+      title: author.name,
+      buttons: [
+        {
+          text: 'Unfollow',
+          role: 'destructive',
+          handler: () => {
+            console.log('Delete clicked');
+          }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel', // will always sort to be on the bottom
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    actionSheet.present();
   }
 }
