@@ -14,6 +14,23 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
+  <ion-list>
+
+    <ion-card ion-item *ngFor="let status of statuses">
+
+      <b>{{status.author.name}}</b>
+      <h4>{{status.text}}</h4>
+
+      <button ion-button item-end clear icon-only (click)="onLikeStatus(status)">
+        <ion-icon name="heart-outline"></ion-icon>
+      </button>
+
+    </ion-card>
+
+  </ion-list>
 </ion-content>

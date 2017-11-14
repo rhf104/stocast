@@ -73,4 +73,9 @@ export class AuthorsProvider {
   delete(author: Author) {
     this.authors.splice(this.authors.indexOf(author), 1);
   }
+
+  followAuthor(authorId: string) {
+
+  }
+
 }

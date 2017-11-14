@@ -33,10 +33,6 @@ export class UserProvider {
     this.user = null;
   }
 
-  followAuthor(authorId: string) {
-
-  }
-
   private signedIn(resp) {
     this.user = resp.user;
   }

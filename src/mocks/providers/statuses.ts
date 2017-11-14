@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
 
 import { Status } from '../../models/status';
 
@@ -8,14 +10,48 @@ export class StatusesProvider {
 
   defaultStatus: any = {
     "id": "833849208",
-    "text": "this is a test status"
+    "text": "this is a test status",
+    "author": {
+      "id": "231230198",
+      "name": "Oscar Wilde",
+      "years": "1854–1900",
+      "titles": [
+        "The Importance of Being Earnest",
+        "The Picture of Dorian Gray"
+      ],
+      "following": true
+    }
   };
 
   constructor() {
     let statuses = [
       {
         "id": "833849208",
-        "text": "this is a test status"
+        "text": "this is a test status",
+        "author": {
+          "id": "231230198",
+          "name": "Oscar Wilde",
+          "years": "1854–1900",
+          "titles": [
+            "The Importance of Being Earnest",
+            "The Picture of Dorian Gray"
+          ],
+          "following": true
+        }
+      },
+      {
+        "id": "12331231",
+        "text": "here's another one lol",
+        "author": {
+          "id": "231230198",
+          "name": "Oscar Wilde",
+          "years": "1854–1900",
+          "titles": [
+            "The Importance of Being Earnest",
+            "The Picture of Dorian Gray"
+          ],
+          "following": true
+        }
       }
     ];
 
@@ -24,30 +60,16 @@ export class StatusesProvider {
     }
   }
 
-  // TODO: add title search mockup
-  query(params?: any) {
+  getStatuses(params?: any): Observable<Status[]> {
     if (!params) {
-      return this.statuses;
+      return Observable.of(this.statuses);
     }
 
-    return this.statuses.filter((status) => {
-      for (let key in params) {
-        let field = status[key];
-        if (typeof field == 'string' && field.toLowerCase().indexOf(params[key].toLowerCase()) >= 0) {
-          return status;
-        } else if (field == params[key]) {
-          return status;
-        }
-      }
-      return null;
-    });
+    return Observable.of(this.statuses);
   }
 
-  add(status: Status) {
-    this.statuses.push(status);
+  likeStatus(status: Status) {
+
   }
 
-  delete(status: Status) {
-    this.statuses.splice(this.statuses.indexOf(status), 1);
-  }
 }

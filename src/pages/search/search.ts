@@ -43,7 +43,7 @@ export class SearchPage {
     if (author.following) {
       this.openUnfollowSheet(author);
     } else {
-      this.user.followAuthor(author.id);
+      this.authors.followAuthor(author.id);
     }
   }
 

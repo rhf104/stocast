@@ -7,7 +7,7 @@ export class StatusesProvider {
 
   constructor(public api: ApiProvider) { }
 
-  get(params?: any) {
+  getStatuses(params?: any) {
     return this.api.get('/statuses', params);
   }
 
