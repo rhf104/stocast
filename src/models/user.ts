@@ -1,9 +1,5 @@
-export class Author {
+export class User {
   id: string;
-  name: string;
-  years: string;
-  titles: string[];
-  following: boolean;
 
   constructor(fields: any) {
     // Quick and dirty extend/assign fields to this model

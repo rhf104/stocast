@@ -6,8 +6,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { Api } from '../providers/api/api';
-import { Authors } from '../mocks/providers/authors';
+import { ApiProvider } from '../providers/api/api';
+import { AuthorsProvider, UserProvider } from "../providers/providers";
 
 @NgModule({
   declarations: [
@@ -23,11 +23,12 @@ import { Authors } from '../mocks/providers/authors';
     MyApp
   ],
   providers: [
-    Api,
-    Authors,
+    ApiProvider,
+    UserProvider,
+    AuthorsProvider,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
 export class AppModule { }

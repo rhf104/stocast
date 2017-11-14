@@ -1,7 +1,9 @@
-import { Api } from "./api/api";
-import { Authors } from "../mocks/providers/authors";
+import { ApiProvider } from "./api/api";
+import { UserProvider } from "../mocks/providers/user";
+import { AuthorsProvider } from "../mocks/providers/authors";
 
 export {
-  Api,
-  Authors
+  ApiProvider,
+  AuthorsProvider,
+  UserProvider
 };

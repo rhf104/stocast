@@ -3,21 +3,24 @@ import { Injectable } from '@angular/core';
 import { Author } from '../../models/author';
 
 @Injectable()
-export class Authors {
+export class AuthorsProvider {
   authors: Author[] = [];
 
   defaultAuthor: any = {
+    "id": "231230198",
     "name": "Oscar Wilde",
     "years": "1854–1900",
     "titles": [
       "The Importance of Being Earnest",
       "The Picture of Dorian Gray"
     ],
+    "following": true
   };
 
   constructor() {
     let authors = [
       {
+        "id": "833849208",
         "name": "Franz Kafka",
         "years": "1883–1924",
         "titles": [
@@ -25,14 +28,17 @@ export class Authors {
           "The Trial",
           "The Castle"
         ],
+        "following": false
       },
       {
+        "id": "231230198",
         "name": "Oscar Wilde",
         "years": "1854–1900",
         "titles": [
           "The Importance of Being Earnest",
           "The Picture of Dorian Gray"
         ],
+        "following": true
       }
     ];
 

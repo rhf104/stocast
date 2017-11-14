@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { ActionSheetController, IonicPage, NavController, NavParams, Searchbar } from 'ionic-angular';
 
-import { Authors } from '../../providers/providers';
+import { AuthorsProvider, UserProvider } from '../../providers/providers';
 import { Author } from '../../models/author';
 
 @IonicPage()
@@ -17,8 +17,9 @@ export class SearchPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public authors: Authors,
-    public actionsheetCtrl: ActionSheetController) {
+    public authors: AuthorsProvider,
+    public actionsheetCtrl: ActionSheetController,
+    public user: UserProvider) {
   }
 
   /**
@@ -35,32 +36,25 @@ export class SearchPage {
     });
   }
 
-  // TODO: implement following
-  /**
-   * Check if user is following an author
-   */
-  isUserFollowing(author: Author) {
-    return true;
-  }
-
   /**
    * Open unfollow action sheet if already following
    */
   onFollowButtonPress(author: Author) {
-    if (this.isUserFollowing(author)) {
+    if (author.following) {
       this.openUnfollowSheet(author);
     } else {
-      this.user.followAuthor(author);
+      this.user.followAuthor(author.id);
     }
   }
 
+  // TODO: add author detail page
   /**
    * Navigate to author detail page
    */
   openAuthor(author: Author) {
-    this.navCtrl.push('AuthorDetailPage', {
-      author: author
-    });
+    // this.navCtrl.push('AuthorDetailPage', {
+    //   author: author
+    // });
   }
 
   /**

@@ -11,7 +11,7 @@
   <ion-list>
     <ion-card ion-item *ngFor="let author of currentAuthors">
 
-      <p *ngIf="isUserFollowing(author)">
+      <p *ngIf="author.following">
         <ion-icon name="person"></ion-icon>
         Following
       </p>
@@ -23,8 +23,8 @@
         <p *ngFor="let title of author.titles">{{title}}</p>
       </ion-note>
 
-      <button ion-button outline [solid]="isUserFollowing(author)" (click)="onFollowButtonPress(author)">
-        Follow<div *ngIf="isUserFollowing(author)">ing</div>
+      <button ion-button outline [solid]="author.following" (click)="onFollowButtonPress(author)">
+        Follow<div *ngIf="author.following">ing</div>
       </button>
 
     </ion-card>
