@@ -46,7 +46,7 @@ export class HomePage {
   }
 
   onLikeStatus(status: Status) {
-    this.statusData.likeStatus(status);
+    // this.statusData.likeStatus(status);
   }
 
 }

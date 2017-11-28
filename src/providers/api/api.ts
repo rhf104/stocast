@@ -1,14 +1,16 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ApiProvider {
-  url: string = 'https://stocast-api.appspot.com/api/v1';
+  // url: string = 'https://stocast-api.appspot.com/api/v1';
+  url: string = 'http://localhost:8080/v1';
 
   constructor(public http: HttpClient) {
   }
 
-  get(endpoint: string, params?: any, reqOpts?: any) {
+  get(endpoint: string, params?: any, reqOpts?: any): Observable<any> {
     if (!reqOpts) {
       reqOpts = {
         params: new HttpParams()

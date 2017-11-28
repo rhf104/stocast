@@ -1,7 +1,7 @@
 import { ApiProvider } from "./api/api";
 import { UserProvider } from "../mocks/providers/user";
 import { AuthorsProvider } from "../mocks/providers/authors";
-import { StatusesProvider } from "../mocks/providers/statuses";
+import { StatusesProvider } from "./statuses/statuses";
 
 export {
   ApiProvider,
