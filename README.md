@@ -22,6 +22,6 @@ Make sure to install [Node.js and npm][nodejs] before continuing.
 4. Run `ionic serve` and navigate to the local dev server at `http://localhost:8100/`
 
 [gutenberg]: https://www.gutenberg.org
-[demo]: https://stocast.appspot.com
+[demo]: https://sto-cast.appspot.com
 [backend]: https://github.com/rhf104/stocast-api
 [nodejs]: https://nodejs.org
